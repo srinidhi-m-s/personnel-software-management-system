@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Attendance Page{% endblock %}
+
+{% block content %}
+<h2>Attendance Check-In</h2>
+
+<form method="post" action="{% url 'check_in' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success mt-3">Check In</button>
+</form>
+{% endblock %}
+
+

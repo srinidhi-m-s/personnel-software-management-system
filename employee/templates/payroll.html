@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Payroll Management{% endblock %}
+
+{% block content %}
+<h2>Employee Payroll</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Employee Name</th>
+            <th>Salary</th>
+            <th>Bonus</th>
+            <th>Deductions</th>
+            <th>Net Pay</th>
+            <th>Date Generated</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for payroll in payrolls %}
+        <tr>
+            <td>{{ payroll.employee.first_name }} {{ payroll.employee.last_name }}</td>
+            <td>{{ payroll.salary }}</td>
+            <td>{{ payroll.bonus }}</td>
+            <td>{{ payroll.deductions }}</td>
+            <td>{{ payroll.net_pay }}</td>
+            <td>{{ payroll.date_generated }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
